@@ -5,18 +5,20 @@
 constexpr int WIDTH = 1280;
 constexpr int HEIGHT = 720;
 
-int main(void) {
-  InitWindow(WIDTH, HEIGHT, "Raylib Template");
+int main(void)
+{
+    InitWindow(WIDTH, HEIGHT, "Raylib Template");
 
-  auto accumulator = 0.0f;
-  while (!WindowShouldClose()) {
-    accumulator += GetFrameTime();
-    auto hue = std::sin(accumulator) * 100;
+    auto accumulator = 0.0f;
+    while (!WindowShouldClose())
+    {
+        accumulator += GetFrameTime();
+        auto hue = std::sin(accumulator) * 100;
 
-    BeginDrawing();
-    ClearBackground(ColorFromHSV(hue, 1.0, 1.0));
-    EndDrawing();
-  }
+        BeginDrawing();
+        ClearBackground(ColorFromHSV(hue, 1.0, 1.0));
+        EndDrawing();
+    }
 
-  CloseWindow();
+    CloseWindow();
 }
